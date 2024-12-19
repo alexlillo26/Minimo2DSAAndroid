@@ -16,6 +16,7 @@ import retrofit2.Response;
 
 public class MessagesActivity extends AppCompatActivity {
 
+    //minimo2
     private ApiService apiService;
     private RecyclerView recyclerView;
     private MessagesAdapter messagesAdapter;
