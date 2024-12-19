@@ -20,10 +20,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.util.List; // Import the List class
+
 public class MainActivity extends AppCompatActivity {
 
     private Button login_button;
     private Button register_button;
+    private Button messagesButton;
     private ApiService apiService;
     private EditText usernameEditText;
     private EditText passwordEditText;
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         login_button = findViewById(R.id.loginButton);
         register_button = findViewById(R.id.registerButton);
+        messagesButton = findViewById(R.id.messagesButton);
         usernameEditText = findViewById(R.id.usernameText);
         passwordEditText = findViewById(R.id.passwordText);
         progressBar = findViewById(R.id.progressBar);
@@ -80,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
             loginUser(user);
         });
 
-
+       messagesButton.setOnClickListener(v -> {
+    Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
+    startActivity(intent);
+    });
     }
 
     private void loginUser(User user) {
